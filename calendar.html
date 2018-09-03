@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+  * {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  .inputCalendar {
+    position: relative;
+    margin-top: 20px;
+  }
+  .calendar-container {
+    position: absolute;
+    left: 0;
+    top: 105%;
+    width: 300px;
+    background-color: #fff;
+    z-index: 999;
+  }
+  .operation-cal {
+    height: 40px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+  }
+  .year-cal {
+    height: 34px;
+    width: 100px;
+    position: absolute;
+    left: 0px;
+    top: 3px;
+    background-color: #eee;
+  }
+  .year-select {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    line-height: 34px;
+    font-size: 14px;
+    text-indent: 1.2em;
+    color: #999;
+  }
+  .year-select::before {
+    content: '▲';
+    position: absolute;
+    right: -8px;
+    top: 0;
+    line-height: 34px;
+    color: #999;
+    transform: rotate(180deg);
+  }
+  .year-set, .month-set {
+    position: absolute;
+    left: 0;
+    top: 34px;
+    width: 100%;
+    height: 180px;
+    background-color: #fff;
+    overflow-y: scroll;
+  }
+  .year-set li, .month-set li {
+    line-height: 28px;
+    font-size: 12px;
+    color: #999;
+    text-indent: 1em;
+  }
+  .month-cal {
+    height: 34px;
+    width: 100px;
+    position: absolute;
+    left: 110px;
+    top: 3px;
+    background-color: #eee;
+  }
+  .month-select {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    line-height: 34px;
+    font-size: 14px;
+    text-indent: 1.2em;
+    color: #999;
+  }
+  .month-select::before {
+    content: '▲';
+    position: absolute;
+    right: -8px;
+    top: 0;
+    line-height: 34px;
+    color: #999;
+    transform: rotate(180deg);
+  }
+  .now-seted {
+    position: absolute;
+    right: 0px;
+    top: 3px;
+    line-height: 34px;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #999;
+    background-color: #eee;
+  }
+  .date-cal-container {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .date-week {
+    line-height: 34px;
+    background-color: #eee;
+    height: 34px;
+    display: flex;
+  }
+  .date-week li {
+    flex: 1;
+    text-align: center;
+    line-height: 34px;
+    font-size: 14px;
+    color: #999;
+  }
+  .date-day {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .date-day li{
+    line-height: 32px;
+    text-align: center;
+    font-size: 13px;
+    color: #999;
+    width: 14.285%;
+  }
+  .calActive {
+    background-color: #5e67a5;
+    color: #fff !important;
+  }
+  .apt, .apt1 {
+    position: relative;
+  }
+  .iconCalendar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .iconCalendar input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2) inset;
+    text-indent: 1em;
+    font-size: 14px;
+    border-radius: 4px;
+    color: #999;
+  }
+  .iconCalendar span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  </style>
+  <script src="./vue.min.js" charset="utf-8"></script>
+  <script src="./newVueDate.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div style="width: 300px;">
+      <web-calendar :date.sync="bdate" :icon="icon" :style="style"></web-calendar>
+      <web-calendar :date.sync="edate" :icon="icon" :style="style"></web-calendar>
+    </div>
+  </div>
+</body>
+
+</html>
+<script type="text/javascript">
+
+  new Vue({
+    el: '#app',
+    data: {
+      bdate: null,
+      edate: null,
+      icon: 'icon-delete',
+      style: {width: '180px', height: '34px'}
+    },
+    methods: {
+
+    },
+    mounted () {
+
+    }
+  })
+</script>
